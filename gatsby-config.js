@@ -1,9 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Resumi`,
+    siteUrl: `https://boonsuen.com/resumi`,
+    description: `An easy to use resume creator.`,
     author: `@gatsbyjs`,
   },
+  pathPrefix: `/resumi`,
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
