@@ -1,8 +1,10 @@
+import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import React from 'react';
 
-const Header = ({ siteTitle }) => (
+import img_logo from '../assets/img/logo.svg';
+
+const NavWrapper = ({ siteTitle }) => (
   <header
     style={{
       background: `rebeccapurple`,
@@ -25,18 +27,19 @@ const Header = ({ siteTitle }) => (
           }}
         >
           {siteTitle}
+          <img src={img_logo} />
         </Link>
       </h1>
     </div>
   </header>
 );
 
-Header.propTypes = {
+NavWrapper.propTypes = {
   siteTitle: PropTypes.string,
 }
 
-Header.defaultProps = {
+NavWrapper.defaultProps = {
   siteTitle: ``,
 }
 
-export default Header;
+export default NavWrapper;
