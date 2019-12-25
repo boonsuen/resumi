@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import NavWrapper from './NavWrapper';
 import './layout.css';
+import GlobalStyle from './GlobalStyle.css';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,6 +26,7 @@ const Layout = ({ children }) => {
 
   return (
     <React.Fragment>
+      <GlobalStyle />
       <NavWrapper siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
