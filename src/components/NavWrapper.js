@@ -7,7 +7,7 @@ import img_logo from '../assets/img/logo.svg';
 
 const StyledNavWrapper = styled.div`
   background: #e4e0ff;
-  marginBottom: 1.45rem;
+  margin-bottom: 1.45rem;
 `;
 
 const NavWrapper = ({ siteTitle }) => (
