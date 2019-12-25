@@ -6,20 +6,19 @@ import PropTypes from 'prop-types';
 import img_logo from '../assets/img/logo.svg';
 
 const StyledNavWrapper = styled.div`
-  background: #e4e0ff;
+  background: #f3f2ff;
+  padding-top: 68px;
   margin-bottom: 1.45rem;
+
+  img {
+    width: 142px;
+  }
 `;
 
 const NavWrapper = ({ siteTitle }) => (
   <StyledNavWrapper className="container">
-    <Link
-      to="/"
-      style={{
-        color: `white`,
-        textDecoration: `none`,
-      }}
-    >
-      <img src={img_logo} alt={siteTitle}/>
+    <Link to="/">
+      <img src={img_logo} alt={siteTitle} />
     </Link>
   </StyledNavWrapper>
 );
