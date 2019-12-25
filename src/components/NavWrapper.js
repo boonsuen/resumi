@@ -6,6 +6,8 @@ import PropTypes from 'prop-types';
 import img_logo from '../assets/img/logo.svg';
 
 const StyledNavWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
   background: #f3f2ff;
   padding-top: 68px;
   margin-bottom: 1.45rem;
@@ -15,11 +17,24 @@ const StyledNavWrapper = styled.div`
   }
 `;
 
+const ButtonsWrapper = styled.div`
+
+`;
+
+const LoginButton = styled(Link)``;
+
+const SignupButton = styled(Link)``;
+
+
 const NavWrapper = ({ siteTitle }) => (
   <StyledNavWrapper className="container">
     <Link to="/">
       <img src={img_logo} alt={siteTitle} />
     </Link>
+    <ButtonsWrapper>
+      <LoginButton to="/login">Login</LoginButton>
+      <SignupButton to="/signup">Signup</SignupButton>
+    </ButtonsWrapper>
   </StyledNavWrapper>
 );
 
