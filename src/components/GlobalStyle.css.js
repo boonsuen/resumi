@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
 
-  input, button {
+  input, button, a {
     font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica, sans-serif;
   }
   

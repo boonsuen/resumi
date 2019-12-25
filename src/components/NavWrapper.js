@@ -18,12 +18,29 @@ const StyledNavWrapper = styled.div`
 `;
 
 const ButtonsWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 227px;
+  height: 44px;
 
+  a {
+    display: inline-block;
+    width: 104px;
+    padding: 8px 0;
+    text-align: center;
+    border-radius: 5px;
+  }
 `;
 
-const LoginButton = styled(Link)``;
+const LoginButton = styled(Link)`
+  border: 1px solid;
+  color: #1e226d;
+`;
 
-const SignupButton = styled(Link)``;
+const SignupButton = styled(Link)`
+  background: #0555ff;
+  color: #fff;
+`;
 
 
 const NavWrapper = ({ siteTitle }) => (
