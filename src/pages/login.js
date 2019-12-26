@@ -17,9 +17,9 @@ const LoginPage = () => {
         <h1>Login to your Resumi account</h1>
         <form>
           <label>Email</label>
-          <input type="email" />
+          <input type="email" placeholder="you@example.com" />
           <label>Password</label>
-          <input type="password" />
+          <input type="password" placeholder="Enter your password" />
           <button>Login</button>
         </form>
       </LoginContainer>
