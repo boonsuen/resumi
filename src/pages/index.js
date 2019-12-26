@@ -16,6 +16,8 @@ const Hero = styled.div`
     background: #4353FF;
     border-radius: 5px;
     color: #fff;
+    text-align: center;
+    line-height: 55px;
   }
 `;
 

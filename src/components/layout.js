@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import NavWrapper from './NavWrapper';
+import Footer from './Footer';
 import './layout.css';
 import GlobalStyle from './GlobalStyle.css';
 
@@ -28,19 +29,8 @@ const Layout = ({ children }) => {
     <React.Fragment>
       <GlobalStyle />
       <NavWrapper siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 1100,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built by
-          {` `}
-          <a href="https://boonsuen.com" target="_blank" rel="noopener noreferrer">Boonsuen</a>
-        </footer>
-      </div>
+      <main className="container">{children}</main>
+      <Footer />
     </React.Fragment>
   );
 }
