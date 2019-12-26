@@ -9,6 +9,7 @@ import SEO from '../components/seo';
 const Hero = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   a {
     width: 160px;
