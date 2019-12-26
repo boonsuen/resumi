@@ -8,11 +8,13 @@ import img_logo from '../assets/img/logo.svg';
 const StyledNavWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height: 44px;
   background: #f3f2ff;
-  padding-top: 68px;
-  margin-bottom: 1.45rem;
+  margin-top: 68px;
 
-  img {
+  a {
+    display: flex;
     width: 142px;
   }
 `;
