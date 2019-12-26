@@ -38,7 +38,7 @@ const Layout = ({ children }) => {
         <footer>
           © {new Date().getFullYear()}, Built by
           {` `}
-          <a href="https://boonsuen.com" target="_blank">Boonsuen</a>
+          <a href="https://boonsuen.com" target="_blank" rel="noopener noreferrer">Boonsuen</a>
         </footer>
       </div>
     </React.Fragment>
