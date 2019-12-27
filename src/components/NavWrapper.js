@@ -10,7 +10,6 @@ const StyledNavWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 44px;
-  background: #f3f2ff;
   margin-top: 68px;
 
   a {
