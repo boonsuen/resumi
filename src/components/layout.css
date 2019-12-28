@@ -217,7 +217,7 @@ img {
   padding-right: 0;
   padding-top: 0;
 }
-h1 {
+h1, h2, h3, h4, h5, h6 {
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -226,82 +226,29 @@ h1 {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 2.25rem;
   line-height: 1.1;
+  font-weight: 500;
+}
+h1 {
+  font-size: 2.25rem;
 }
 h2 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
   font-size: 1.62671rem;
-  line-height: 1.1;
 }
 h3 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
   font-size: 1.38316rem;
-  line-height: 1.1;
 }
 h4 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
   font-size: 1rem;
-  line-height: 1.1;
 }
 h5 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
   font-size: 0.85028rem;
-  line-height: 1.1;
 }
 h6 {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
   font-size: 0.78405rem;
-  line-height: 1.1;
 }
-hgroup {
+hgroup, dl, dd, p, figure, fieldset, form, noscript, iframe {
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -335,46 +282,6 @@ ol {
   list-style-position: outside;
   list-style-image: none;
 }
-dl {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-}
-dd {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-}
-p {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-}
-figure {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-}
 pre {
   margin-left: 0;
   margin-right: 0;
@@ -402,49 +309,9 @@ table {
   border-collapse: collapse;
   width: 100%;
 }
-fieldset {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-}
 blockquote {
   margin-left: 1.45rem;
   margin-right: 1.45rem;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-}
-form {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-}
-noscript {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-}
-iframe {
-  margin-left: 0;
-  margin-right: 0;
   margin-top: 0;
   padding-bottom: 0;
   padding-left: 0;
@@ -475,16 +342,7 @@ address {
   padding-top: 0;
   margin-bottom: 1.45rem;
 }
-b {
-  font-weight: bold;
-}
-strong {
-  font-weight: bold;
-}
-dt {
-  font-weight: bold;
-}
-th {
+b, strong, dt, th {
   font-weight: bold;
 }
 li {
@@ -518,15 +376,7 @@ p *:last-child {
 li > p {
   margin-bottom: calc(1.45rem / 2);
 }
-code {
-  font-size: 0.85rem;
-  line-height: 1.45rem;
-}
-kbd {
-  font-size: 0.85rem;
-  line-height: 1.45rem;
-}
-samp {
+code, kbd, samp {
   font-size: 0.85rem;
   line-height: 1.45rem;
 }
