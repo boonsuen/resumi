@@ -30,13 +30,13 @@ const ButtonsWrapper = styled.div`
     padding: 8px 0;
     text-align: center;
     border-radius: 5px;
+    transition: all 0.3s;
   }
 `;
 
 const LoginButton = styled(Link)`
   border: 1px solid;
   color: #1e226d;
-  transition: color 0.3s, box-shadow 0.3s;
 
   &:hover {
     color: #0d1131;
@@ -47,7 +47,6 @@ const LoginButton = styled(Link)`
 const SignupButton = styled(Link)`
   background: #0555ff;
   color: #fff;
-  transition: background 0.3s, box-shadow 0.3s;
 
   &:hover {
     background: #004fed;
