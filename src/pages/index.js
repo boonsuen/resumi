@@ -11,6 +11,11 @@ const Hero = styled.div`
   flex-direction: column;
   align-items: center;
 
+  h1 {
+    color: #1E226D;
+    font-weight: 500;
+  }
+
   a {
     width: 160px;
     height: 55px;

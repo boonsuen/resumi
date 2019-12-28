@@ -10,10 +10,11 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
   }
 
-  ${'' /* @font-face {
+  @font-face {
     font-family: "Graphik";
-    src: url(${AvenirNextMediumSubsetWoff2}) format('woff2');    font-weight: 500;
-  } */}
+    src: url(${GraphikMediumWoff2}) format('woff2');    
+    font-weight: 500;
+  }
 
   html, #___gatsby {
     height: 100%;
@@ -25,10 +26,6 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     height: 100%;
-  }
-
-  input, button, a {
-    font-family: -apple-system, BlinkMacSystemFont, Roboto, Helvetica, sans-serif;
   }
   
   a {
