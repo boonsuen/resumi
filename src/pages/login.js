@@ -20,7 +20,7 @@ const ImgWrapper = styled.div`
 `;
 
 const LoginContainer = styled.div`
-  width: 636px;
+  width: 600px;
   padding: 55px 75px;
   border-radius: 10px;
   box-shadow: 0 2px 11px rgba(128, 155, 208, 0.5);
@@ -28,6 +28,22 @@ const LoginContainer = styled.div`
   h1 {
     color: #000948;
     font-size: 22px;
+  }
+`;
+
+const AuthFormInput = styled.input`
+  display: block;
+  width: 100%;
+  height: 48px;
+  padding-left: 15px;
+  border: 1px solid #e0e5e9;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all .3s;
+
+  &:focus {
+    border-color: #0555FF;
+    outline: none;
   }
 `;
 
@@ -50,12 +66,12 @@ const LoginPage = () => {
           <h1>Login to your Resumi account</h1>
           <form>
             <label htmlFor="email">Email</label>
-            <input 
+            <AuthFormInput 
               type="email" placeholder="you@example.com" 
               spellCheck="false" id="email"
             />
             <label htmlFor="password">Password</label>
-            <input 
+            <AuthFormInput 
               type="password" placeholder="Enter your password" 
               id="password"
             />
