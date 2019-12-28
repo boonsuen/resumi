@@ -4,6 +4,20 @@ import styled from 'styled-components';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import img_shieldlock from '../assets/img/shieldlock.svg';
+
+const MainLoginWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 100px 0;
+`;
+
+const ImgWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+`;
 
 const LoginContainer = styled.div`
   width: 636px;
@@ -21,18 +35,21 @@ const LoginPage = () => {
   return (
     <Layout>
       <SEO title="Login" />
-      <LoginContainer>
-        <h1>Login to your Resumi account</h1>
-        <form>
-          <label>Email</label>
-          <input type="email" placeholder="you@example.com" />
-          <label>Password</label>
-          <input type="password" placeholder="Enter your password" />
-          <Link to="/">Forgot password?</Link>
-          <button type="submit">Login</button>
-          <Link to="/">Don't have an account?</Link>
-        </form>
-      </LoginContainer>
+      <MainLoginWrapper>
+        <ImgWrapper><img src={img_shieldlock} /></ImgWrapper>
+        <LoginContainer>
+          <h1>Login to your Resumi account</h1>
+          <form>
+            <label>Email</label>
+            <input type="email" placeholder="you@example.com" />
+            <label>Password</label>
+            <input type="password" placeholder="Enter your password" />
+            <Link to="/">Forgot password?</Link>
+            <button type="submit">Login</button>
+            <Link to="/signup">Don't have an account?</Link>
+          </form>
+        </LoginContainer>
+      </MainLoginWrapper>
     </Layout>
   );
 }
