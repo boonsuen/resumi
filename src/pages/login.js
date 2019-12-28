@@ -31,6 +31,10 @@ const LoginContainer = styled.div`
   }
 `;
 
+const AuthFormLabel = styled.label`
+  color: #000948;
+`;
+
 const AuthFormInput = styled.input`
   display: block;
   width: 100%;
@@ -65,12 +69,12 @@ const LoginPage = () => {
         <LoginContainer>
           <h1>Login to your Resumi account</h1>
           <form>
-            <label htmlFor="email">Email</label>
+            <AuthFormLabel htmlFor="email">Email</AuthFormLabel>
             <AuthFormInput 
               type="email" placeholder="you@example.com" 
               spellCheck="false" id="email"
             />
-            <label htmlFor="password">Password</label>
+            <AuthFormLabel htmlFor="password">Password</AuthFormLabel>
             <AuthFormInput 
               type="password" placeholder="Enter your password" 
               id="password"
