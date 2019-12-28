@@ -21,7 +21,7 @@ const ImgWrapper = styled.div`
 
 const LoginContainer = styled.div`
   width: 636px;
-  height: 460px;
+  padding: 55px 75px;
   border-radius: 10px;
   box-shadow: 0 2px 11px rgba(128, 155, 208, 0.5);
 
@@ -36,14 +36,20 @@ const LoginPage = () => {
     <Layout>
       <SEO title="Login" />
       <MainLoginWrapper>
-        <ImgWrapper><img src={img_shieldlock} /></ImgWrapper>
+        <ImgWrapper><img src={img_shieldlock} alt="Shield lock" /></ImgWrapper>
         <LoginContainer>
           <h1>Login to your Resumi account</h1>
           <form>
-            <label>Email</label>
-            <input type="email" placeholder="you@example.com" />
-            <label>Password</label>
-            <input type="password" placeholder="Enter your password" />
+            <label htmlFor="email">Email</label>
+            <input 
+              type="email" placeholder="you@example.com" 
+              spellCheck="false" id="email"
+            />
+            <label htmlFor="password">Password</label>
+            <input 
+              type="password" placeholder="Enter your password" 
+              id="password"
+            />
             <Link to="/">Forgot password?</Link>
             <button type="submit">Login</button>
             <Link to="/signup">Don't have an account?</Link>
