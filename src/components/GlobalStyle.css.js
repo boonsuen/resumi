@@ -21,6 +21,10 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
+  button {
+    border: none;
+  }
+
   .container {
     width: 1100px;
     max-width: 90%;

@@ -31,6 +31,15 @@ const LoginContainer = styled.div`
   }
 `;
 
+const AuthFormButton = styled.button`
+  width: 112px;
+  height: 50px;
+  border-radius: 5px;
+  background: #4353ff;
+  color: #fff;
+  font-size: 18px;
+`;
+
 const LoginPage = () => {
   return (
     <Layout>
@@ -51,7 +60,7 @@ const LoginPage = () => {
               id="password"
             />
             <Link to="/">Forgot password?</Link>
-            <button type="submit">Login</button>
+            <AuthFormButton type="submit">Login</AuthFormButton>
             <Link to="/signup">Don't have an account?</Link>
           </form>
         </LoginContainer>
