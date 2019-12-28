@@ -13,15 +13,15 @@ const Hero = styled.div`
 
   h1 {
     color: #1E226D;
-    font-weight: 500;
   }
 
   a {
     width: 160px;
     height: 55px;
-    background: #4353FF;
     border-radius: 5px;
+    background: #4353FF;
     color: #fff;
+    font-weight: 500;
     text-align: center;
     line-height: 55px;
   }
