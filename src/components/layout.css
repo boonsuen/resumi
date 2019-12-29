@@ -248,7 +248,7 @@ h5 {
 h6 {
   font-size: 0.78405rem;
 }
-hgroup, dl, dd, p, figure, fieldset, form, noscript, iframe {
+hgroup, dl, dd, p, figure, fieldset, form, noscript, iframe, address {
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -258,19 +258,7 @@ hgroup, dl, dd, p, figure, fieldset, form, noscript, iframe {
   padding-top: 0;
   margin-bottom: 1.45rem;
 }
-ul {
-  margin-left: 1.45rem;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  list-style-position: outside;
-  list-style-image: none;
-}
-ol {
+ul, ol {
   margin-left: 1.45rem;
   margin-right: 0;
   margin-top: 0;
@@ -332,45 +320,21 @@ hr {
   border: none;
   height: 1px;
 }
-address {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-}
 b, strong, dt, th {
   font-weight: bold;
 }
 li {
   margin-bottom: calc(1.45rem / 2);
 }
-ol li {
+ol li, ul li {
   padding-left: 0;
 }
-ul li {
-  padding-left: 0;
-}
-li > ol {
+li > ol, li > ul {
   margin-left: 1.45rem;
   margin-bottom: calc(1.45rem / 2);
   margin-top: calc(1.45rem / 2);
 }
-li > ul {
-  margin-left: 1.45rem;
-  margin-bottom: calc(1.45rem / 2);
-  margin-top: calc(1.45rem / 2);
-}
-blockquote *:last-child {
-  margin-bottom: 0;
-}
-li *:last-child {
-  margin-bottom: 0;
-}
-p *:last-child {
+blockquote *:last-child, li *:last-child, p *:last-child {
   margin-bottom: 0;
 }
 li > p {
@@ -380,11 +344,7 @@ code, kbd, samp {
   font-size: 0.85rem;
   line-height: 1.45rem;
 }
-abbr {
-  border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
-  cursor: help;
-}
-acronym {
+abbr, acronym {
   border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
   cursor: help;
 }
