@@ -87,7 +87,7 @@ const LoginPage = () => {
               type="password" placeholder="Enter your password" 
               id="password"
             />
-            <Link to="/">Forgot password?</Link>
+            <Link to="/amnesia">Forgot password?</Link>
             <AuthFormButton type="submit">Login</AuthFormButton>
             <Link to="/signup">Don't have an account?</Link>
           </form>

@@ -9,10 +9,19 @@ import SEO from '../components/seo';
 const Hero = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  height: 350px;
 
   h1 {
+    margin-bottom: 23px;
     color: #1E226D;
+  }
+
+  p {
+    margin-bottom: 40px;
+    color: #455880;
+    font-size: 20px;
   }
 
   a {
