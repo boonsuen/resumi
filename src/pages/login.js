@@ -49,6 +49,14 @@ const AuthFormInput = styled.input`
     border-color: #0555FF;
     outline: none;
   }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover, 
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    border: 1px solid #e0e5e9;
+    transition: background-color 5000s ease-in-out 0s;
+  }
 `;
 
 const AuthFormButton = styled.button`
