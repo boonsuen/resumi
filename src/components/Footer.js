@@ -20,9 +20,19 @@ const SocialLink = styled.a`
   &:first-child {
     margin-right: 40px;
   }
+
+  img {
+    width: 20px;
+    transition: all 0.3s;
+  }
+
+  &:hover img {
+    margin-left: calc(50% - 10px);
+  }
 `;
 
-const SocialText = styled.div`
+const SocialText = styled.span`
+  display: block;
   color: #fff;
   font-size: 20px;
   font-weight: 500;
