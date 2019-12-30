@@ -6,13 +6,14 @@
  */
 
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import NavWrapper from './NavWrapper';
 import Footer from './Footer';
 import './layout.css';
-import GlobalStyle from './GlobalStyle.css';
+import GlobalStyle, { fontFaceRules } from './GlobalStyle.css';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -27,6 +28,9 @@ const Layout = ({ children }) => {
 
   return (
     <React.Fragment>
+      <Helmet>
+        <style>{fontFaceRules}</style>
+      </Helmet>
       <GlobalStyle />
       <NavWrapper siteTitle={data.site.siteMetadata.title} />
       <main className="container">{children}</main>

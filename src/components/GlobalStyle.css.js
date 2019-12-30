@@ -3,7 +3,12 @@ import { createGlobalStyle } from 'styled-components';
 import GraphikRegularWoff2 from '../assets/fonts/Graphik-Regular-Web.woff2';
 import GraphikMediumWoff2 from '../assets/fonts/Graphik-Medium-Web.woff2';
 
-const GlobalStyle = createGlobalStyle`
+// Why are the @font-face rules extracted to be used on its own? 
+// GlobalStyle causes custom fonts to be re-requested when
+// it get rerendered, or some other possible behaviors like
+// rehyration, component state change.
+// This will cause font loading problems like FOIT and FOUT. Bad bad.
+export const fontFaceRules = `
   @font-face {
     font-family: "Graphik";
     src: url(${GraphikRegularWoff2}) format('woff2');    
@@ -15,7 +20,9 @@ const GlobalStyle = createGlobalStyle`
     src: url(${GraphikMediumWoff2}) format('woff2');    
     font-weight: 500;
   }
+`;
 
+const GlobalStyle = createGlobalStyle`
   html, #___gatsby {
     height: 100%;
   }
