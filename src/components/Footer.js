@@ -65,7 +65,7 @@ const Footer = () => (
         <img src={img_Twitter} alt="Twitter" />
         <SocialText>Twitter</SocialText>
       </SocialLink>
-      <SocialLink href="https://github.com/boonsuen" target="_blank" rel="noopener noreferrer">
+      <SocialLink href="https://github.com/boonsuen/resumi" target="_blank" rel="noopener noreferrer">
         <img src={img_GitHub} alt="GitHub" />
         <SocialText>GitHub</SocialText>
       </SocialLink>
