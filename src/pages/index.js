@@ -12,6 +12,7 @@ const Hero = styled.div`
   justify-content: center;
   align-items: center;
   height: 350px;
+  text-align: center;
 
   h1 {
     margin-bottom: 23px;
