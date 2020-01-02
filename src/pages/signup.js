@@ -2,7 +2,6 @@ import React from 'react';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import img_shieldlock from '../assets/img/shieldlock.svg';
 import {
   MainAuthWrapper,
   ImgWrapper,
@@ -13,6 +12,7 @@ import {
   AuthFormButton,
   ReverseAuthLink
 } from './login';
+import img_shieldlock from '../assets/img/shieldlock.svg';
 
 const SignupPage = () => {
   return (
