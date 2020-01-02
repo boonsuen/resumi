@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import Layout from '../components/layout';
 import { 
+  MainAuthWrapper,
+  ImgWrapper,
   AuthContainer,
   AuthFormLabel,
   AuthFormInput,
@@ -10,10 +12,10 @@ import {
   AuthFormButton,
   ReverseAuthLink
 } from './login';
+import img_mail from '../assets/img/mail.svg';
 
 const AmnesiaContainer = styled(AuthContainer)`
   width: 583px;
-  margin: 100px 0;
 
   h2 {
     color: #5d6a76;
@@ -29,6 +31,7 @@ const SubmitButton = styled(AuthFormButton)`
 
 const Amnesia = () => (
   <Layout>
+    <MainAuthWrapper>
     <AmnesiaContainer>
       <h1>Forgot your password?</h1>
       <h2>Enter your email address and you’ll receive a link to reset your password.</h2>
@@ -44,6 +47,8 @@ const Amnesia = () => (
         </AuthFormActions>
       </form>
     </AmnesiaContainer>
+    <ImgWrapper><img src={img_mail} alt="Mail illustration" /></ImgWrapper>
+    </MainAuthWrapper>
   </Layout>
 );
 
