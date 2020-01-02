@@ -9,7 +9,7 @@
       <stop offset="1" stop-color="#a4c6ff"/>
     </linearGradient>
   </defs>
-  <title>Asset 2</title>
+  <title>Asset 4</title>
   <g style="isolation: isolate">
     <g id="Layer_2" data-name="Layer 2">
       <g id="Layer_1-2" data-name="Layer 1">
@@ -40,8 +40,8 @@
           </g>
           <rect x="426.21" y="76.46" width="13.08" height="13.08" transform="translate(185.44 -281.69) rotate(45)" style="fill: #83d9ff"/>
           <circle cx="7.5" cy="227" r="6.5" style="fill: none;stroke: #9cbbff;stroke-miterlimit: 10;stroke-width: 2px"/>
-          <rect x="287.5" width="33.5" height="5.5" rx="2.75" ry="2.75" style="fill: #aeaeff"/>
-          <rect x="56.5" y="323" width="33.5" height="5.5" rx="2.75" ry="2.75" style="fill: #aeaeff"/>
+          <rect x="287.5" width="33.5" height="5.5" rx="2.75" ry="2.75" style="fill: #78a2ff"/>
+          <rect x="56.5" y="323" width="33.5" height="5.5" rx="2.75" ry="2.75" style="fill: #78a2ff"/>
         </g>
       </g>
     </g>
