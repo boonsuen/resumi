@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import SEO from '../components/seo';
+import SEO from './seo';
 import img_logo from '../assets/img/logo.svg';
 import img_account from '../assets/img/app/icons/account.svg';
 import img_folder from '../assets/img/app/folder.svg';
@@ -40,6 +40,8 @@ const App = () => (
       </Header>
       <ResumesSection>
         <img src={img_folder} alt="Folder illustration" />
+        <p>Oops... It's empty here.<br />Let's create your resume</p>
+        <button>New resume</button>
       </ResumesSection>
     </MainContainer>
   </React.Fragment>

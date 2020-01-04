@@ -1,7 +1,11 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require("path");
 
-// You can delete this file if you're not using it
+exports.createPages = async ({ graphql, actions, reporter }) => {
+  const { createPage } = actions;
+  const App = path.resolve(`src/components/app.js`)
+  createPage({
+    path: 'app',
+    component: App,
+    context: {}
+  })
+};
