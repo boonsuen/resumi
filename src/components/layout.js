@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import NavWrapper from './NavWrapper';
 import Footer from './Footer';
-import './layout.css';
+// import './layout.css';
 import GlobalStyle, { fontFaceRules } from './GlobalStyle.css';
 
 const Layout = ({ children }) => {
@@ -28,10 +28,10 @@ const Layout = ({ children }) => {
 
   return (
     <React.Fragment>
-      <Helmet>
+      {/* <Helmet>
         <style>{fontFaceRules}</style>
       </Helmet>
-      <GlobalStyle />
+      <GlobalStyle /> */}
       <NavWrapper siteTitle={data.site.siteMetadata.title} />
       <main className="container">{children}</main>
       <Footer />

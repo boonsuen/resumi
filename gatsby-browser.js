@@ -1,7 +1,16 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+const React = require("react");
+const GlobalStyle = require("./src/components/GlobalStyle.css").default;
+const { fontFaceRules } = require("./src/components/GlobalStyle.css");
+const { Helmet } = require("react-helmet");
 
-// You can delete this file if you're not using it
+exports.wrapPageElement = ({ element, props }) => {
+  return (
+    <React.Fragment>
+      <Helmet>
+        <style>{fontFaceRules}</style>
+      </Helmet>
+      <GlobalStyle />
+      {element}
+    </React.Fragment>
+  );
+};

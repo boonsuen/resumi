@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
+import './layout.css';
 import GraphikRegularWoff2 from '../assets/fonts/Graphik-Regular-Web.woff2';
 import GraphikMediumWoff2 from '../assets/fonts/Graphik-Medium-Web.woff2';
 
@@ -23,7 +24,7 @@ export const fontFaceRules = `
 `;
 
 const GlobalStyle = createGlobalStyle`
-  html, #___gatsby {
+  html, #___gatsby, #gatsby-focus-wrapper {
     height: 100%;
   }
 
@@ -33,6 +34,10 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     height: 100%;
+  }
+
+  h1, h2, h3, h4, h5, h6  {
+    font-weight: 500;
   }
   
   a {
