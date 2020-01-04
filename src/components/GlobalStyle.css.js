@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-import './layout.css';
+import './global.css';
 import GraphikRegularWoff2 from '../assets/fonts/Graphik-Regular-Web.woff2';
 import GraphikMediumWoff2 from '../assets/fonts/Graphik-Medium-Web.woff2';
 
