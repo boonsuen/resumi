@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import img_GitHub from '../assets/img/icons/github.svg';
-import img_Twitter from '../assets/img/icons/twitter.svg';
+import img_GitHub from '../../assets/img/icons/github.svg';
+import img_Twitter from '../../assets/img/icons/twitter.svg';
 
 const StyledFooter = styled.footer`
   height: 160px;

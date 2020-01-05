@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import img_logo from '../assets/img/logo.svg';
+import img_logo from '../../assets/img/logo.svg';
 
 const StyledNavWrapper = styled.div`
   display: flex;
