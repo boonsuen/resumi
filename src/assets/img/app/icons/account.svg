@@ -1,1 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="28.762" width="30.51"><defs><path id="a" d="M3.748 0.028H26.748V25.028H3.748z"/><mask id="b" maskUnits="userSpaceOnUse"><path d="M0 0H30.51V28.762H0z"/><use xlink:href="#a" fill="#fff"/></mask></defs><g mask="url(#b)" fill-opacity="0" stroke="#1B3857" stroke-width="2"><ellipse rx="5.482" ry="5.57" cx="15.248" cy="6.57" fill="none"/><path stroke-linecap="round" d="M4.705 24.057v-2.513c0-2.759 2.18-5 4.883-5h11.334c2.69 0 4.883 2.241 4.883 5v2.513" fill="none"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
+  <title>Asset 1</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g>
+        <circle cx="90" cy="90" r="90" style="fill: #f5fcff"/>
+        <g id="Layer_2-2" data-name="Layer 2">
+          <g id="Layer_1-2-2" data-name="Layer 1-2">
+            <polyline points="128.47 73.22 128.47 73.22 137.46 83.11 131.42 89.14 134.94 98.2 144 98.2 144 112.29 134.94 112.29 131.42 120.85 137.46 127.89 127.89 137.46 121.35 130.91 112.29 134.94 112.29 143.5 98.2 143.5 98.71 134.94 89.65 130.91 83.61 137.46 73.04 127.39" style="fill: none;stroke: #4bc3ff;stroke-linecap: round;stroke-linejoin: round;stroke-width: 6.039px"/>
+            <path d="M116.5,102.81c.84,6.1-4.21,13.92-12.07,12.73" style="fill: none;stroke: #4bc3ff;stroke-linecap: round;stroke-linejoin: round;stroke-width: 6.039px"/>
+          </g>
+        </g>
+        <g id="Layer_2-3" data-name="Layer 2">
+          <g id="Layer_1-2-3" data-name="Layer 1-2">
+            <polygon points="89.86 49.58 95.89 43.04 105.46 53.1 99.42 59.14 102.94 68.2 112 68.2 112 82.29 102.94 82.29 99.42 90.85 105.46 97.89 95.89 107.46 89.35 100.92 80.29 104.94 80.29 113.5 66.2 113.5 66.71 104.94 57.65 100.92 51.61 107.46 41.04 97.39 47.58 91.35 44.56 82.29 35 81.79 35 68.2 44.56 68.2 47.58 59.14 41.54 53.1 51.61 43.04 57.65 49.58 66.71 45.56 66.71 37 80.8 37 80.8 46.06 89.86 49.58" style="fill: #fff;stroke: #2161ff;stroke-linecap: round;stroke-linejoin: round;stroke-width: 6.039216041564941px"/>
+            <circle cx="73.75" cy="75" r="10.82" style="fill: #fff;stroke: #2161ff;stroke-miterlimit: 10;stroke-width: 6.039216041564941px"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
