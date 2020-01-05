@@ -7,6 +7,16 @@ module.exports = {
   },
   pathPrefix: `/resumi`,
   plugins: [
+    {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/src/pages`,
+        ignore: {
+          patterns: [`components/*.*`],
+          options: { nocase: true }
+        }
+      }
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
