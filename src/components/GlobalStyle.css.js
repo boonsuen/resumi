@@ -47,6 +47,10 @@ const GlobalStyle = createGlobalStyle`
   button {
     border: none;
     cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   .container {
