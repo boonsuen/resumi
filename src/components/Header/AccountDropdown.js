@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import onClickOutside from 'react-onclickoutside';
 
 import img_account from '../../assets/img/app/icons/account.svg';
 
@@ -34,4 +35,10 @@ const AccountButton = () => {
   );
 };
 
-export default AccountButton;
+const AccountDropdown = () => {
+  return (
+    <AccountButton />
+  );
+};
+
+export default AccountDropdown;

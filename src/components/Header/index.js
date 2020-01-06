@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 import img_logo from '../../assets/img/logo.svg';
-import AccountButton from './AccountButton';
+import AccountDropdown from './AccountDropdown';
 
 const StyledHeader = styled.header`
   flex: 0 1 auto;
@@ -39,7 +39,7 @@ const Header = () => {
           <Link to="/app">
             <Logo src={img_logo} alt="Resumi logo" />
           </Link>
-          <AccountButton />
+          <AccountDropdown />
         </Topbar>
       <h1>Your resumes</h1>
       </Container>
