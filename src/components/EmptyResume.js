@@ -54,7 +54,7 @@ const EmptyResume = () => (
   <StyledEmptyResume>
     <img src={img_folder} alt="Folder illustration" />
     <p>Oops... It's empty here.<br />Let's create your resume</p>
-    <button><img src={img_newResume} />New resume</button>
+    <button><img src={img_newResume} alt="+" />New resume</button>
   </StyledEmptyResume>
 );
 
