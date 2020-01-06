@@ -21,7 +21,7 @@ const Button = styled.button`
   }
 
   &:hover {
-    box-shadow: 0 0 4px rgba(198, 212, 234, 1);
+    box-shadow: 0 0 4px rgb(198, 212, 234);
   }
 `;
 
