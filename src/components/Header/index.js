@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 import img_logo from '../../assets/img/logo.svg';
@@ -7,6 +8,12 @@ import AccountButton from './AccountButton';
 const StyledHeader = styled.header`
   flex: 0 1 auto;
   padding: 40px 0 0 0;
+
+  h1 {
+    margin: 63px 0 28px 0;
+    color: #00174A;
+    font-size: 28px;
+  }
 `;
 
 const Container = styled.div`
@@ -29,7 +36,9 @@ const Header = () => {
     <StyledHeader>
       <Container>
         <Topbar>
-          <Logo src={img_logo} alt="Resumi logo" />
+          <Link to="/app">
+            <Logo src={img_logo} alt="Resumi logo" />
+          </Link>
           <AccountButton />
         </Topbar>
       <h1>Your resumes</h1>
