@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import img_folder from '../assets/img/app/folder.svg';
+import img_newResume from '../assets/img/app/icons/new-resume.svg';
 
 const StyledEmptyResume = styled.div`
   display: flex;
@@ -11,7 +12,7 @@ const StyledEmptyResume = styled.div`
   height: 100%;
   text-align: center;
 
-  img {
+  & > img {
     margin: 30px 0 10px 0;
   }
 
@@ -24,6 +25,9 @@ const StyledEmptyResume = styled.div`
   }
 
   button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 159px;
     height: 42px;
     margin: 16px 0 30px 0;
@@ -32,6 +36,17 @@ const StyledEmptyResume = styled.div`
     color: #fff;
     font-size: 16px;
     font-weight: 500;
+    line-height: 42px;
+    transition: box-shadow 0.3s;
+
+    img {
+      width: 13px;
+      margin-right: 7px;
+    }
+
+    &:hover {
+      box-shadow: 0 2px 8px #B6C1DF;
+    }
   }
 `;
 
@@ -39,7 +54,7 @@ const EmptyResume = () => (
   <StyledEmptyResume>
     <img src={img_folder} alt="Folder illustration" />
     <p>Oops... It's empty here.<br />Let's create your resume</p>
-    <button>+ New resume</button>
+    <button><img src={img_newResume} />New resume</button>
   </StyledEmptyResume>
 );
 
