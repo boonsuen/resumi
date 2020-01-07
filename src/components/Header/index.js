@@ -10,7 +10,7 @@ const StyledHeader = styled.header`
   padding: 40px 0 0 0;
 
   h1 {
-    margin: 63px 0 28px 0;
+    margin: 60px 0 28px 0;
     color: #00174A;
     font-size: 28px;
   }
