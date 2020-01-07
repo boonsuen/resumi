@@ -9,7 +9,7 @@ import img_signOut from '../../assets/img/app/icons/sign-out.svg';
 const Button = styled.button`
   display: flex;
   align-items: center;
-  width: 125px;
+  width: 126px;
   height: 40px;
   padding: 0;
   border-radius: 22px;
@@ -34,7 +34,7 @@ const DropdownListContainer = styled.div`
 
 const DropdownList = styled.ul`
   position: absolute;
-  width: 125px;
+  width: 126px;
   margin: 0;
   padding: 0px;
   box-sizing: border-box;
@@ -65,6 +65,11 @@ const ListItem = styled.li`
 
   span {
     padding-top: 2px;
+    transition: transform .2s ease-in-out;
+  }
+
+  &:hover span {
+    transform: translateX(3px);
   }
 `;
 
