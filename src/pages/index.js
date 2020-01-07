@@ -11,7 +11,7 @@ const Hero = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 350px;
+  height: 360px;
   text-align: center;
 
   h1 {
