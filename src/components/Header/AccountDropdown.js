@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import onClickOutside from 'react-onclickoutside';
 
 import img_account from '../../assets/img/app/icons/account.svg';
+import img_setting from '../../assets/img/app/icons/setting.svg';
+import img_signOut from '../../assets/img/app/icons/sign-out.svg';
 
 const Button = styled.button`
   display: flex;
@@ -13,27 +15,18 @@ const Button = styled.button`
   border-radius: 22px;
   box-shadow: 0 0 4px rgba(198, 212, 234, .8);
   color: #26282D;
-  font-size: 16px;
+  font-size: 15px;
   transition: box-shadow 0.3s;
 
   img {
     width: 40px;
-    margin-right: 8px;
+    margin-right: 7px;
   }
 
   &:hover {
     box-shadow: 0 0 4px rgb(198, 212, 234);
   }
 `;
-
-const AccountButton = ({ toggle }) => {
-  return (
-    <Button onClick={toggle}>
-      <img src={img_account} alt="Account" />
-      <span>Account</span>
-    </Button>
-  );
-};
 
 const DropdownListContainer = styled.div`
   margin-top: 11px;
@@ -48,7 +41,7 @@ const DropdownList = styled.ul`
   background: #fff;
   box-shadow: 0 0 4px rgba(198, 212, 234, .8);
   border-radius: 14px;
-  font-size: 16px;
+  font-size: 15px;
   transform: ${props => props.visible
     ? 'translateY(0)' 
     : 'translateY(8px)'};
@@ -65,7 +58,24 @@ const ListItem = styled.li`
   height: 40px;
   display: flex;
   align-items: center;
+
+  img {
+    margin-right: 7px;
+  }
+
+  span {
+    padding-top: 2px;
+  }
 `;
+
+const AccountButton = ({ toggle }) => {
+  return (
+    <Button onClick={toggle}>
+      <img src={img_account} alt="Account" />
+      <span>Account</span>
+    </Button>
+  );
+};
 
 const AccountDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -76,8 +86,14 @@ const AccountDropdown = () => {
       <AccountButton toggle={toggle} />
       <DropdownListContainer>
         <DropdownList visible={isOpen ? 1 : 0}>
-          <ListItem>Setting</ListItem>
-          <ListItem>Sign out</ListItem>
+          <ListItem>
+            <img src={img_setting} alt="Setting" />
+            <span>Setting</span>
+          </ListItem>
+          <ListItem>
+            <img src={img_signOut} alt="Sign out" />
+            <span>Sign out</span>
+          </ListItem>
         </DropdownList>
       </DropdownListContainer>
     </div>
