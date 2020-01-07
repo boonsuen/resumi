@@ -84,6 +84,8 @@ const AccountDropdown = () => {
   );
 };
 
+AccountDropdown.prototype = {}
+
 const clickOutsideConfig = {
   handleClickOutside: () => AccountDropdown.handleClickOutside
 };
