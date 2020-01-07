@@ -54,10 +54,13 @@ const DropdownList = styled.ul`
 `;
 
 const ListItem = styled.li`
-  margin: 0;
-  height: 40px;
   display: flex;
   align-items: center;
+  height: 40px;
+  margin: 0;
+  cursor: ${props => props.visible 
+    ? 'pointer'
+    : 'default'};
 
   img {
     margin-right: 7px;
@@ -91,11 +94,11 @@ const AccountDropdown = () => {
       <AccountButton toggle={toggle} />
       <DropdownListContainer>
         <DropdownList visible={isOpen ? 1 : 0}>
-          <ListItem>
+          <ListItem visible={isOpen ? 1 : 0}>
             <img src={img_setting} alt="Setting" />
             <span>Setting</span>
           </ListItem>
-          <ListItem>
+          <ListItem visible={isOpen ? 1 : 0}>
             <img src={img_signOut} alt="Sign out" />
             <span>Sign out</span>
           </ListItem>
