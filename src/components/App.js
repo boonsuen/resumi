@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import SEO from './seo';
@@ -20,16 +20,18 @@ const ResumesSection = styled.section`
   }
 `;
 
-const App = () => (
-  <React.Fragment>
-    <SEO title="Dashboard" />
-    <MainContainer>
-      <Header />
-      <ResumesSection>
-        <EmptyResume />
-      </ResumesSection>
-    </MainContainer>
-  </React.Fragment>
-);
+const App = () => {
+  return (
+    <React.Fragment>
+      <SEO title="Dashboard" />
+      <MainContainer>
+        <Header />
+        <ResumesSection>
+          <EmptyResume />
+        </ResumesSection>
+      </MainContainer>
+    </React.Fragment>
+  );
+};
 
 export default App;
