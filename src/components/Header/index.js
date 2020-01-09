@@ -16,7 +16,7 @@ const StyledHeader = styled.header`
   }
 `;
 
-const Container = styled.div`
+export const Container = styled.div`
   width: 1130px;
   max-width: 90%;
   margin: auto;
@@ -31,7 +31,14 @@ const Logo = styled.img`
   height: 33px;
 `;
 
-const Header = () => {
+const Header = ({ pathname }) => {
+  const getTitleByPathname = pathname => {
+    if (pathname === '/app' || pathname === '/app/') {
+      return "Your resumes";
+    } else {
+      return "Account Settings";
+    }
+  };
   return (
     <StyledHeader>
       <Container>
@@ -41,7 +48,7 @@ const Header = () => {
           </Link>
           <AccountDropdown />
         </Topbar>
-      <h1>Your resumes</h1>
+      <h1>{getTitleByPathname(pathname)}</h1>
       </Container>
     </StyledHeader>
   );

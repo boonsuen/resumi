@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from '@reach/router';
 import styled from 'styled-components';
 import onClickOutside from 'react-onclickoutside';
 
@@ -58,6 +59,7 @@ const ListItem = styled.li`
   align-items: center;
   height: 40px;
   margin: 0;
+  color: #26282D;
   cursor: ${props => props.visible 
     ? 'pointer'
     : 'default'};
@@ -93,11 +95,13 @@ const AccountDropdown = () => {
     <div>
       <AccountButton toggle={toggle} />
       <DropdownListContainer>
-        <DropdownList visible={isOpen ? 1 : 0}>
-          <ListItem visible={isOpen ? 1 : 0}>
-            <img src={img_setting} alt="Setting" />
-            <span>Setting</span>
-          </ListItem>
+        <DropdownList visible={isOpen ? 1 : 0} onClick={toggle}>
+          <Link to="app/account">
+            <ListItem visible={isOpen ? 1 : 0}>
+              <img src={img_setting} alt="Setting" />
+              <span>Setting</span>
+            </ListItem>
+          </Link>
           <ListItem visible={isOpen ? 1 : 0}>
             <img src={img_signOut} alt="Sign out" />
             <span>Sign out</span>

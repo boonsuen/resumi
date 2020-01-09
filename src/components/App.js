@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router } from '@reach/router';
+import { Router, Location } from '@reach/router';
 import { withPrefix } from 'gatsby';
 import styled from 'styled-components';
 
@@ -28,13 +28,21 @@ const App = () => {
     <React.Fragment>
       <SEO title="Dashboard" />
       <MainContainer>
-        <Header />
-        <Section>
-          <StyledRouter>
-            <EmptyResume path={withPrefix("/app")} />
-            <Account path={withPrefix("/app/account")} />
-          </StyledRouter>
-        </Section>
+        <Location>
+          {({ location }) => {
+            return (
+              <React.Fragment>
+                <Header pathname={location.pathname} />
+                <Section>
+                  <StyledRouter>
+                    <EmptyResume path={withPrefix("/app")} />
+                    <Account path={withPrefix("/app/account")} />
+                  </StyledRouter>
+                </Section>
+              </React.Fragment>
+            );
+          }}
+        </Location>
       </MainContainer>
     </React.Fragment>
   );

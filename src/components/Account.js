@@ -1,9 +1,11 @@
 import React from 'react';
 
+import { Container } from './Header';
+
 class Account extends React.Component {
   render() {
     return (
-      <React.Fragment>
+      <Container>
         <h2>Profile</h2>
         <div>
           <form>
@@ -18,7 +20,7 @@ class Account extends React.Component {
           <p>If you delete your account, all of the associated data will be removed, including all your resumes. You'll get a confirmation email first.</p>
           <button>Delete Account</button>
         </div>
-      </React.Fragment>
+      </Container>
     );
   }
 }
