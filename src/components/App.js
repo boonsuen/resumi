@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Router } from '@reach/router';
 import styled from 'styled-components';
 
 import SEO from './seo';
 import Header from './Header';
 import EmptyResume from './EmptyResume';
+import Account from './Account';
 
 const MainContainer = styled.div`
   display: flex;
@@ -11,13 +13,13 @@ const MainContainer = styled.div`
   height: 100%;
 `;
 
-const ResumesSection = styled.section`
+const Section = styled.section`
   background: #F5F9FA;
   flex: 1 1 auto;
+`;
 
-  img {
-    width: 139px;
-  }
+const StyledRouter = styled(Router)`
+  height: 100%;
 `;
 
 const App = () => {
@@ -26,9 +28,12 @@ const App = () => {
       <SEO title="Dashboard" />
       <MainContainer>
         <Header />
-        <ResumesSection>
-          <EmptyResume />
-        </ResumesSection>
+        <Section>
+          <StyledRouter>
+            <EmptyResume path="/app" />           
+            <Account path="/app/account" />
+          </StyledRouter>
+        </Section>
       </MainContainer>
     </React.Fragment>
   );
