@@ -1,5 +1,6 @@
 import React from 'react';
 import { Router } from '@reach/router';
+import { withPrefix } from 'gatsby';
 import styled from 'styled-components';
 
 import SEO from './seo';
@@ -30,8 +31,8 @@ const App = () => {
         <Header />
         <Section>
           <StyledRouter>
-            <EmptyResume path="/app" />           
-            <Account path="/app/account" />
+            <EmptyResume path={withPrefix("/app")} />
+            <Account path={withPrefix("/app/account")} />
           </StyledRouter>
         </Section>
       </MainContainer>
