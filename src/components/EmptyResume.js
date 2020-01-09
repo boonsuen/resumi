@@ -50,9 +50,13 @@ const StyledEmptyResume = styled.div`
   }
 `;
 
+const FolderImage = styled.img`
+  width: 139px;
+`;
+
 const EmptyResume = () => (
   <StyledEmptyResume>
-    <img src={img_folder} alt="Folder illustration" />
+    <FolderImage src={img_folder} alt="Folder illustration" />
     <p>Oops... It's empty here.<br />Let's create your resume</p>
     <button><img src={img_newResume} alt="+" />New resume</button>
   </StyledEmptyResume>
