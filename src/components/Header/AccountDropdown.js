@@ -96,7 +96,7 @@ const AccountDropdown = () => {
       <AccountButton toggle={toggle} />
       <DropdownListContainer>
         <DropdownList visible={isOpen ? 1 : 0} onClick={toggle}>
-          <Link to={withPrefix("app/account")}>
+          <Link to="app/account">
             <ListItem visible={isOpen ? 1 : 0}>
               <img src={img_setting} alt="Setting" />
               <span>Setting</span>
