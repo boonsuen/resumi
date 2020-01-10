@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from '@reach/router';
+import { Link, withPrefix } from 'gatsby';
 import styled from 'styled-components';
 import onClickOutside from 'react-onclickoutside';
 
@@ -96,7 +96,7 @@ const AccountDropdown = () => {
       <AccountButton toggle={toggle} />
       <DropdownListContainer>
         <DropdownList visible={isOpen ? 1 : 0} onClick={toggle}>
-          <Link to="app/account">
+          <Link to={withPrefix("app/account")}>
             <ListItem visible={isOpen ? 1 : 0}>
               <img src={img_setting} alt="Setting" />
               <span>Setting</span>

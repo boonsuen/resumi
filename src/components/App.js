@@ -35,8 +35,8 @@ const App = () => {
                 <Header pathname={location.pathname} />
                 <Section>
                   <StyledRouter>
-                    <EmptyResume path={withPrefix("/app")} />
-                    <Account path={withPrefix("/app/account")} />
+                    <EmptyResume path={withPrefix("app")} />
+                    <Account path={withPrefix("app/account")} />
                   </StyledRouter>
                 </Section>
               </React.Fragment>
