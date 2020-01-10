@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, withPrefix } from 'gatsby';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import onClickOutside from 'react-onclickoutside';
 

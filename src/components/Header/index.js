@@ -33,7 +33,7 @@ const Logo = styled.img`
 
 const Header = ({ pathname }) => {
   const getTitleByPathname = pathname => {
-    if (pathname === '/app' || pathname === '/app/') {
+    if (pathname.endsWith('/app') || pathname.endsWith('/app/')) {
       return "Your resumes";
     } else {
       return "Account Settings";
