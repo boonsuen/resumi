@@ -33,6 +33,14 @@ class SignupPage extends React.Component {
       password, 
       confirmPassword
     } = this.state;
+    if (!email.trim()) {
+      this.setState(state => ({ 
+        inputInvalid: {
+          ...state.inputInvalid,
+          email: true
+        }
+      }));
+    }
     if (password !== confirmPassword) {
       if (password.length < 6) {
         this.setState(state => ({ 
@@ -68,6 +76,7 @@ class SignupPage extends React.Component {
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(() => {
       console.log('Signed up: ', email, password);
+      console.log(firebase.auth().currentUser);
     })
     .catch(error => {
       const { code, message } = error;
