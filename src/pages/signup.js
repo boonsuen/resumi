@@ -65,14 +65,22 @@ class SignupPage extends React.Component {
       return;
     }
     console.log('password match and length ok');
-    // firebase.auth().createUserWithEmailAndPassword(email, password)
-    // .then(() => {
-    //   console.log('Signed up: ', email, password);
-    // })
-    // .catch(error => {
-    //   const { code, message } = error;
-    //   console.log('Signup error: ', code, message);
-    // });
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(() => {
+      console.log('Signed up: ', email, password);
+    })
+    .catch(error => {
+      const { code, message } = error;
+      if (code === 'auth/email-already-in-use' || code === 'auth/invalid-email') {
+        console.log(message);
+        this.setState(state => ({ 
+          inputInvalid: {
+           ...state.inputInvalid,
+           email: true 
+          }
+        }));
+      }
+    });
   };
   onEmailChange = e => {
     const email = e.target.value;
@@ -96,7 +104,6 @@ class SignupPage extends React.Component {
   };
   onConfirmPasswordChange = e => {
     const confirmPassword = e.target.value;
-    this.setState({ confirmPassword });
     this.setState(state => ({ 
       confirmPassword,
       inputInvalid: {
@@ -118,8 +125,9 @@ class SignupPage extends React.Component {
               <AuthFormLabel htmlFor="email">Email</AuthFormLabel>
               <AuthFormInput 
                 type="email" placeholder="you@example.com" 
-                spellCheck="false" onChange={this.onEmailChange}
-                id="email"
+                spellCheck="false" id="email"
+                onChange={this.onEmailChange}
+                invalid={inputInvalid.email}
               />
               <AuthFormLabel htmlFor="password">Password</AuthFormLabel>
               <AuthFormInput 

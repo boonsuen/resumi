@@ -47,13 +47,12 @@ export const AuthFormInput = styled.input`
   height: 48px;
   padding-left: 15px;
   margin-bottom: 24px;
-  border: 1px solid #e0e5e9;
+  border: 1px solid ${props => props.invalid ? '#fc354a' : '#e0e5e9'};
   border-radius: 5px;
   color: #26282D;
   font-size: 16px;
   transition: all .3s;
   overflow: auto;
-  border-color: ${props => props.invalid ? '#fc354a' : '#e0e5e9'};
 
   &:focus {
     border-color: #0555FF;
@@ -68,7 +67,7 @@ export const AuthFormInput = styled.input`
   &:-webkit-autofill:hover, 
   &:-webkit-autofill:focus,
   &:-webkit-autofill:active {
-    border: 1px solid #e0e5e9;
+    border: 1px solid ${props => props.invalid ? '#fc354a' : '#e0e5e9'};
     -webkit-text-fill-color: #26282D;
     transition: background-color 5000s ease-in-out 0s;
   }
