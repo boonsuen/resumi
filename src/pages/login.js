@@ -90,12 +90,16 @@ export const AuthFormActions = styled(DivSpaceBetween)`
 `;
 
 export const AuthFormButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 112px;
   height: 50px;
   border-radius: 5px;
-  background: #4353ff;
+  background: ${props => props.loading ? "#5465ff" : "#4353ff"};
   color: #fff;
   font-size: 18px;
+  transition: background 0.3s;
 `;
 
 export const ReverseAuthLink = styled(Link)`

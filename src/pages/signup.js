@@ -1,4 +1,5 @@
 import React from 'react';
+import styled, { keyframes } from 'styled-components';
 
 import firebase from '../firebase';
 import Layout from './components/Layout';
@@ -15,6 +16,25 @@ import {
 } from './login';
 import img_shieldlock from '../assets/img/shieldlock.svg';
 
+const rotate = keyframes`
+  to {
+    transform: rotate(1turn)
+  }
+`;
+
+const Loading = styled.span`
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border: 2px solid rgba(255,255,255,0.8);
+  border-left-color: #7a97ff;
+  border-top-color: #7a97ff;
+  ${'' /* #4f6cff */}
+  ${'' /* #7a97ff */}
+  border-radius: 50%;
+  animation: ${rotate} 340ms infinite linear;
+`;
+
 class SignupPage extends React.Component {
   state = {
     email: '',
@@ -24,7 +44,8 @@ class SignupPage extends React.Component {
       email: false,
       password: false,
       confirmPassword: false
-    }
+    },
+    loading: false
   };
   handleSignup = e => {
     e.preventDefault();
@@ -50,7 +71,7 @@ class SignupPage extends React.Component {
             confirmPassword: true
           }
         }));
-        console.log('password not match and length short');
+        // password not match and length short
         return;
       } else {
         this.setState(state => ({ 
@@ -59,7 +80,7 @@ class SignupPage extends React.Component {
             confirmPassword: true
           }
         }));
-        console.log('password not match but length ok');
+        // password not match but length ok
         return;
       }
     } else if (password.length < 6) {
@@ -69,26 +90,31 @@ class SignupPage extends React.Component {
           password: true
         }
       }));
-      console.log('password match but length short');
+      // password match but length short
       return;
     }
-    console.log('password match and length ok');
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then(() => {
-      console.log('Signed up: ', email, password);
-      console.log(firebase.auth().currentUser);
-    })
-    .catch(error => {
-      const { code, message } = error;
-      if (code === 'auth/email-already-in-use' || code === 'auth/invalid-email') {
-        console.log(message);
-        this.setState(state => ({ 
-          inputInvalid: {
-           ...state.inputInvalid,
-           email: true 
-          }
-        }));
-      }
+    // password match and length ok
+    this.setState({
+      loading: true
+    }, () => {
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then(() => {
+        console.log('Signed up: ', email, password);
+        console.log(firebase.auth().currentUser);
+      })
+      .catch(error => {
+        const { code, message } = error;
+        if (code === 'auth/email-already-in-use' || code === 'auth/invalid-email') {
+          console.log(message);
+          this.setState(state => ({ 
+            inputInvalid: {
+            ...state.inputInvalid,
+            email: true 
+            },
+            loading: false
+          }));
+        }
+      });
     });
   };
   onInputChange = e => {
@@ -103,7 +129,7 @@ class SignupPage extends React.Component {
     }));
   };
   render() {
-    const { inputInvalid } = this.state;
+    const { inputInvalid, loading } = this.state;
     return (
       <Layout>
         <SEO title="Signup" />
@@ -131,7 +157,9 @@ class SignupPage extends React.Component {
                 onChange={this.onInputChange} invalid={inputInvalid.confirmPassword}
               />
               <AuthFormActions>
-                <AuthFormButton type="submit">Sign Up</AuthFormButton>
+                <AuthFormButton type="submit" loading={loading ? 1 : 0}>
+                  {!loading ? "Sign Up" : <Loading />}
+                </AuthFormButton>
                 <ReverseAuthLink to="/login">Already have an account?</ReverseAuthLink>
               </AuthFormActions>
             </form>
