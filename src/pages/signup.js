@@ -91,33 +91,14 @@ class SignupPage extends React.Component {
       }
     });
   };
-  onEmailChange = e => {
-    const email = e.target.value;
-    this.setState(state => ({ 
-      email,
+  onInputChange = e => {
+    e.persist();
+    const { value, name } = e.target;
+    this.setState(state => ({
+      [name]: value,
       inputInvalid: {
-       ...state.inputInvalid,
-       email: false 
-      }
-    }));
-  };
-  onPasswordChange = e => {
-    const password = e.target.value;
-    this.setState(state => ({ 
-      password,
-      inputInvalid: {
-       ...state.inputInvalid,
-       password: false 
-      }
-    }));
-  };
-  onConfirmPasswordChange = e => {
-    const confirmPassword = e.target.value;
-    this.setState(state => ({ 
-      confirmPassword,
-      inputInvalid: {
-       ...state.inputInvalid,
-       confirmPassword: false 
+        ...state.inputInvalid,
+        [name]: false
       }
     }));
   };
@@ -134,21 +115,20 @@ class SignupPage extends React.Component {
               <AuthFormLabel htmlFor="email">Email</AuthFormLabel>
               <AuthFormInput 
                 type="email" placeholder="you@example.com" 
-                spellCheck="false" id="email"
-                onChange={this.onEmailChange}
-                invalid={inputInvalid.email}
+                spellCheck="false" id="email" name="email"
+                onChange={this.onInputChange} invalid={inputInvalid.email}
               />
               <AuthFormLabel htmlFor="password">Password</AuthFormLabel>
               <AuthFormInput 
                 type="password" placeholder="Minimum 6 characters required" 
-                id="password" onChange={this.onPasswordChange}
-                invalid={inputInvalid.password}
+                id="password" name="password" 
+                onChange={this.onInputChange} invalid={inputInvalid.password}
               />
               <AuthFormLabel htmlFor="confirmPassword">Confirm password</AuthFormLabel>
               <AuthFormInput 
                 type="password" placeholder="Enter your password again" 
-                id="confirmPassword" onChange={this.onConfirmPasswordChange}
-                invalid={inputInvalid.confirmPassword}
+                id="confirmPassword" name="confirmPassword" 
+                onChange={this.onInputChange} invalid={inputInvalid.confirmPassword}
               />
               <AuthFormActions>
                 <AuthFormButton type="submit">Sign Up</AuthFormButton>
