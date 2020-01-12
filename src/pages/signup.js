@@ -28,42 +28,82 @@ class SignupPage extends React.Component {
   };
   handleSignup = e => {
     e.preventDefault();
-    console.log('submit');
     const { 
       email, 
       password, 
       confirmPassword
     } = this.state;
-    if ( password !== confirmPassword ) {
+    if (password !== confirmPassword) {
+      if (password.length < 6) {
+        this.setState(state => ({ 
+          inputInvalid: {
+            ...state.inputInvalid,
+            password: true,
+            confirmPassword: true
+          }
+        }));
+        console.log('password not match and length short');
+        return;
+      } else {
+        this.setState(state => ({ 
+          inputInvalid: {
+            ...state.inputInvalid,
+            confirmPassword: true
+          }
+        }));
+        console.log('password not match but length ok');
+        return;
+      }
+    } else if (password.length < 6) {
       this.setState(state => ({ 
         inputInvalid: {
           ...state.inputInvalid,
-          confirmPassword: true
+          password: true
         }
       }));
-      console.log('invalid');
+      console.log('password match but length short');
       return;
     }
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then(() => {
-      console.log('Signed up: ', email, password);
-    })
-    .catch(error => {
-      const { code, message } = error;
-      console.log('Signup error: ', code, message);
-    });
+    console.log('password match and length ok');
+    // firebase.auth().createUserWithEmailAndPassword(email, password)
+    // .then(() => {
+    //   console.log('Signed up: ', email, password);
+    // })
+    // .catch(error => {
+    //   const { code, message } = error;
+    //   console.log('Signup error: ', code, message);
+    // });
   };
   onEmailChange = e => {
     const email = e.target.value;
-    this.setState({ email });
+    this.setState(state => ({ 
+      email,
+      inputInvalid: {
+       ...state.inputInvalid,
+       email: false 
+      }
+    }));
   };
   onPasswordChange = e => {
     const password = e.target.value;
-    this.setState({ password });
+    this.setState(state => ({ 
+      password,
+      inputInvalid: {
+       ...state.inputInvalid,
+       password: false 
+      }
+    }));
   };
   onConfirmPasswordChange = e => {
     const confirmPassword = e.target.value;
     this.setState({ confirmPassword });
+    this.setState(state => ({ 
+      confirmPassword,
+      inputInvalid: {
+       ...state.inputInvalid,
+       confirmPassword: false 
+      }
+    }));
   };
   render() {
     const { inputInvalid } = this.state;
