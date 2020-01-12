@@ -53,6 +53,7 @@ export const AuthFormInput = styled.input`
   font-size: 16px;
   transition: all .3s;
   overflow: auto;
+  border-color: ${props => props.invalid ? '#fc354a' : '#e0e5e9'};
 
   &:focus {
     border-color: #0555FF;
