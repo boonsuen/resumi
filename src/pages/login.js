@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
+import firebase from '../firebase';
 import Layout from './components/Layout';
 import SEO from '../components/seo';
 import img_shieldlock from '../assets/img/shieldlock.svg';
@@ -89,7 +90,12 @@ export const AuthFormActions = styled(DivSpaceBetween)`
   margin-top: 35px;
 `;
 
-export const AuthFormButton = styled.button`
+export const ReverseAuthLink = styled(Link)`
+  color: #26282D;
+  font-size: 16px;
+`;
+
+const StyledAuthFormButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,42 +108,144 @@ export const AuthFormButton = styled.button`
   transition: background 0.3s;
 `;
 
-export const ReverseAuthLink = styled(Link)`
-  color: #26282D;
-  font-size: 16px;
+const rotate = keyframes`
+  to {
+    transform: rotate(1turn)
+  }
 `;
 
-const LoginPage = () => {
-  return (
-    <Layout>
-      <SEO title="Login" />
-      <MainAuthWrapper>
-        <ImgWrapper><img src={img_shieldlock} alt="Shield lock" /></ImgWrapper>
-        <AuthContainer>
-          <h1>Login to your Resumi account</h1>
-          <form>
-            <AuthFormLabel htmlFor="email">Email</AuthFormLabel>
-            <AuthFormInput 
-              type="email" placeholder="you@example.com" 
-              spellCheck="false" id="email"
-            />
-            <DivSpaceBetween>
-              <AuthFormLabel htmlFor="password">Password</AuthFormLabel>
-              <ForgotPassword to="/amnesia">Forgot password?</ForgotPassword>
-            </DivSpaceBetween>
-            <AuthFormInput 
-              type="password" placeholder="Enter your password" 
-              id="password"
-            />
-            <AuthFormActions>
-              <AuthFormButton type="submit">Log In</AuthFormButton>
-              <ReverseAuthLink to="/signup">Don't have an account?</ReverseAuthLink>
-            </AuthFormActions>
-          </form>
-        </AuthContainer>
-      </MainAuthWrapper>
-    </Layout>
-  );
+const Loading = styled.span`
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border: 2px solid rgba(255,255,255,0.8);
+  border-left-color: #7a97ff;
+  border-top-color: #7a97ff;
+  border-radius: 50%;
+  animation: ${rotate} 340ms infinite linear;
+`;
+
+export const AuthFormButton = ({ text, loading }) => (
+  <StyledAuthFormButton type="submit" loading={loading ? 1 : 0}>
+    {!loading ? text : <Loading />}
+  </StyledAuthFormButton>
+);
+
+class LoginPage extends React.Component {
+  state = {
+    email: '',
+    password: '',
+    inputInvalid: {
+      email: false,
+      password: false
+    },
+    loading: false
+  };
+  handleLogin = e => {
+    e.preventDefault();
+    const { 
+      email, 
+      password
+    } = this.state;
+    this.setState({
+      inputInvalid: {
+        email: false,
+        password: false
+      }
+    });
+    if (!email.trim()) {
+      this.setState(state => ({ 
+        inputInvalid: {
+          ...state.inputInvalid,
+          email: true
+        }
+      }));
+    }
+    if (password.length < 6) {
+      this.setState(state => ({ 
+        inputInvalid: {
+          ...state.inputInvalid,
+          password: true
+        }
+      }));
+      return;
+    }
+    this.setState({
+      loading: true
+    }, () => {
+      firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(() => {
+        console.log('Signed in');
+      })
+      .catch(error => {
+        const { code, message } = error;
+        console.log(message);        
+        if (code === 'auth/invalid-email' || code === 'auth/user-not-found') {
+          this.setState(state => ({ 
+            inputInvalid: {
+              ...state.inputInvalid,
+              email: true 
+            },
+            loading: false
+          }));
+        } else if (code === 'auth/wrong-password') {
+          this.setState(state => ({ 
+            inputInvalid: {
+              ...state.inputInvalid,
+              password: true 
+            },
+            loading: false
+          }));
+        }
+      });
+    });
+  };  
+  onInputChange = e => {
+    e.persist();
+    const { value, name } = e.target;
+    this.setState(state => ({
+      [name]: value,
+      inputInvalid: {
+        ...state.inputInvalid,
+        [name]: false
+      }
+    }));
+  };
+  render() {
+    const { inputInvalid, loading } = this.state;
+    return (
+      <Layout>
+        <SEO title="Login" />
+        <MainAuthWrapper>
+          <ImgWrapper><img src={img_shieldlock} alt="Shield lock" /></ImgWrapper>
+          <AuthContainer>
+            <h1>Login to your Resumi account</h1>
+            <form onSubmit={this.handleLogin}>
+              <AuthFormLabel htmlFor="email">Email</AuthFormLabel>
+              <AuthFormInput 
+                type="email" placeholder="you@example.com" 
+                spellCheck="false" id="email" name="email"
+                onChange={this.onInputChange} invalid={inputInvalid.email}
+              />
+              <DivSpaceBetween>
+                <AuthFormLabel htmlFor="password">Password</AuthFormLabel>
+                <ForgotPassword to="/amnesia">Forgot password?</ForgotPassword>
+              </DivSpaceBetween>
+              <AuthFormInput 
+                type="password" placeholder="Enter your password" 
+                id="password" name="password"
+                onChange={this.onInputChange} invalid={inputInvalid.password}
+              />
+              <AuthFormActions>
+                <AuthFormButton text="Log In" loading={loading} />
+                <ReverseAuthLink to="/signup">Don't have an account?</ReverseAuthLink>
+              </AuthFormActions>
+            </form>
+          </AuthContainer>
+        </MainAuthWrapper>
+      </Layout>
+    );
+  }
 }
 
 export default LoginPage;

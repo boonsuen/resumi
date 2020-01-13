@@ -1,5 +1,4 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
 
 import firebase from '../firebase';
 import Layout from './components/Layout';
@@ -15,25 +14,6 @@ import {
   ReverseAuthLink
 } from './login';
 import img_shieldlock from '../assets/img/shieldlock.svg';
-
-const rotate = keyframes`
-  to {
-    transform: rotate(1turn)
-  }
-`;
-
-const Loading = styled.span`
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  border: 2px solid rgba(255,255,255,0.8);
-  border-left-color: #7a97ff;
-  border-top-color: #7a97ff;
-  ${'' /* #4f6cff */}
-  ${'' /* #7a97ff */}
-  border-radius: 50%;
-  animation: ${rotate} 340ms infinite linear;
-`;
 
 class SignupPage extends React.Component {
   state = {
@@ -54,6 +34,13 @@ class SignupPage extends React.Component {
       password, 
       confirmPassword
     } = this.state;
+    this.setState({
+      inputInvalid: {
+        email: false,
+        password: false,
+        confirmPassword: false
+      }
+    });
     if (!email.trim()) {
       this.setState(state => ({ 
         inputInvalid: {
@@ -157,9 +144,7 @@ class SignupPage extends React.Component {
                 onChange={this.onInputChange} invalid={inputInvalid.confirmPassword}
               />
               <AuthFormActions>
-                <AuthFormButton type="submit" loading={loading ? 1 : 0}>
-                  {!loading ? "Sign Up" : <Loading />}
-                </AuthFormButton>
+                <AuthFormButton text="Sign Up" loading={loading} />
                 <ReverseAuthLink to="/login">Already have an account?</ReverseAuthLink>
               </AuthFormActions>
             </form>
