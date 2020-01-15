@@ -44,7 +44,7 @@ const Amnesia = () => (
           spellCheck="false" id="email"
         />
         <AuthFormActions>
-          <SubmitButton type="submit">Send reset email</SubmitButton>
+          <SubmitButton text="Send reset email" loading={false} />
           <ReverseAuthLink to="/login">Back to login</ReverseAuthLink>
         </AuthFormActions>
       </form>

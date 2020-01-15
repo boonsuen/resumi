@@ -125,8 +125,12 @@ const Loading = styled.span`
   animation: ${rotate} 340ms infinite linear;
 `;
 
-export const AuthFormButton = ({ text, loading }) => (
-  <StyledAuthFormButton type="submit" loading={loading ? 1 : 0}>
+export const AuthFormButton = ({ className, text, loading }) => (
+  <StyledAuthFormButton 
+    className={className} 
+    type="submit" 
+    loading={loading ? 1 : 0}
+  >
     {!loading ? text : <Loading />}
   </StyledAuthFormButton>
 );
