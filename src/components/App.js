@@ -7,6 +7,7 @@ import SEO from './seo';
 import Header from './Header';
 import EmptyResume from './EmptyResume';
 import Account from './Account';
+import Editor from './Editor';
 
 const MainContainer = styled.div`
   display: flex;
@@ -23,7 +24,32 @@ const StyledRouter = styled(Router)`
   height: 100%;
 `;
 
-const App = () => {
+// const App = () => {
+//   return (
+//     <React.Fragment>
+//       <SEO title="Dashboard" />
+//       <MainContainer>
+//         <Location>
+//           {({ location }) => {
+//             return (
+//               <React.Fragment>
+//                 <Header pathname={location.pathname} />
+//                 <Section>
+//                   <StyledRouter>
+//                     <EmptyResume path={withPrefix("app")} />
+//                     <Account path={withPrefix("app/account")} />
+//                   </StyledRouter>
+//                 </Section>
+//               </React.Fragment>
+//             );
+//           }}
+//         </Location>
+//       </MainContainer>
+//     </React.Fragment>
+//   );
+// };
+
+const Dashboard = () => {
   return (
     <React.Fragment>
       <SEO title="Dashboard" />
@@ -35,8 +61,8 @@ const App = () => {
                 <Header pathname={location.pathname} />
                 <Section>
                   <StyledRouter>
-                    <EmptyResume path={withPrefix("app")} />
-                    <Account path={withPrefix("app/account")} />
+                    <EmptyResume path={withPrefix("/")} />
+                    <Account path={withPrefix("account")} />
                   </StyledRouter>
                 </Section>
               </React.Fragment>
@@ -47,5 +73,12 @@ const App = () => {
     </React.Fragment>
   );
 };
+
+const App = () => (
+  <StyledRouter>
+    <Dashboard path="/app/*" />
+    <Editor path="/app/editor" />
+  </StyledRouter>
+);
 
 export default App;
