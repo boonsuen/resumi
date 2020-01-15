@@ -61,8 +61,8 @@ const Dashboard = () => {
                 <Header pathname={location.pathname} />
                 <Section>
                   <StyledRouter>
-                    <EmptyResume path={withPrefix("/")} />
-                    <Account path={withPrefix("account")} />
+                    <EmptyResume path={"/"} />
+                    <Account path={"account"} />
                   </StyledRouter>
                 </Section>
               </React.Fragment>
@@ -76,8 +76,8 @@ const Dashboard = () => {
 
 const App = () => (
   <StyledRouter>
-    <Dashboard path="/app/*" />
-    <Editor path="/app/editor" />
+    <Dashboard path={withPrefix("/app/*")} />
+    <Editor path={withPrefix("/app/editor")} />
   </StyledRouter>
 );
 
