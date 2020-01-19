@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from '@reach/router';
 import styled from 'styled-components';
 
 import img_folder from '../assets/img/app/folder.svg';
@@ -24,7 +25,7 @@ const StyledEmptyResume = styled.div`
     line-height: 1.45em;
   }
 
-  button {
+  a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,7 +59,7 @@ const EmptyResume = () => (
   <StyledEmptyResume>
     <FolderImage src={img_folder} alt="Folder illustration" />
     <p>Oops... It's empty here.<br />Let's create your resume</p>
-    <button><img src={img_newResume} alt="+" />New resume</button>
+    <Link to="editor"><img src={img_newResume} alt="+" />New resume</Link>
   </StyledEmptyResume>
 );
 
