@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Router, Location } from '@reach/router';
 import { withPrefix } from 'gatsby';
+import Helmet from 'react-helmet';
 import styled, { keyframes } from 'styled-components';
 
 import SEO from './seo';
@@ -54,7 +55,9 @@ const InitialLoading = () => {
 
   return (
     <React.Fragment>
-      <SEO title="Loading..." />
+      <Helmet>
+        <title>Loading...</title>
+      </Helmet>
       <LoaderWrapper className="flex-center">
         <svg id="init-loading-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115 134">
           <title>Asset 4</title>
