@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import EditSection from './EditSection';
 import ResumePreviewSection from './ResumePreviewSection';
+import SEO from '../seo';
 
 const MainContainer = styled.div`
   width: 100%;
@@ -13,10 +14,13 @@ const MainContainer = styled.div`
 
 const Editor = () => {
   return (
-    <MainContainer>
-      <EditSection />
-      <ResumePreviewSection />
-    </MainContainer>
+    <React.Fragment>
+      <SEO title="Editor" />
+      <MainContainer>
+        <EditSection />
+        <ResumePreviewSection />
+      </MainContainer>
+    </React.Fragment>
   );
 };
 
