@@ -29,11 +29,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: "Graphik", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, sans-serif;
-    font-weight: 400;
+    height: 100%;
     margin: 0;
     padding: 0;
-    height: 100%;
+    font-family: "Graphik", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, sans-serif;
+    font-weight: 400;
+    color: #26282D;
   }
 
   h1, h2, h3, h4, h5, h6  {
@@ -51,6 +52,10 @@ const GlobalStyle = createGlobalStyle`
     &:focus {
       outline: none;
     }
+  }
+
+  input {
+    color: #26282D;
   }
 
   .container {
