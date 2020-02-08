@@ -57,7 +57,7 @@ const FolderImage = styled.img`
 
 const EmptyResume = () => (
   <StyledEmptyResume>
-    <FolderImage src={img_folder} alt="Folder illustration" />
+    <FolderImage src={img_folder} alt="Folder illustration" draggable="false" />
     <p>Oops... It's empty here.<br />Let's create your resume</p>
     <Link to="editor"><img src={img_newResume} alt="+" />New resume</Link>
   </StyledEmptyResume>
