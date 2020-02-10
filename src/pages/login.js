@@ -183,7 +183,7 @@ class LoginPage extends React.Component {
       })
       .catch(error => {
         const { code, message } = error;
-        console.log(message);        
+        console.log(error);        
         if (code === 'auth/invalid-email' || code === 'auth/user-not-found') {
           this.setState(state => ({ 
             inputInvalid: {
@@ -200,6 +200,9 @@ class LoginPage extends React.Component {
             },
             loading: false
           }));
+        } else if (code === 'auth/too-many-requests') {
+          alert("Too many unsuccessful login attempts. Please try again later.")
+          document.location.reload();
         }
       });
     });
