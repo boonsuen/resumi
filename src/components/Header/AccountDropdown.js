@@ -81,7 +81,7 @@ const ListItem = styled.li`
 const AccountButton = ({ toggle }) => {
   return (
     <Button onClick={toggle}>
-      <img src={img_account} alt="Account" />
+      <img src={img_account} alt="Account" draggable="false" />
       <span>Account</span>
     </Button>
   );
@@ -98,12 +98,12 @@ const AccountDropdown = () => {
         <DropdownList visible={isOpen ? 1 : 0} onClick={toggle}>
           <Link to="account">
             <ListItem visible={isOpen ? 1 : 0}>
-              <img src={img_setting} alt="Setting" />
+              <img src={img_setting} alt="Setting" draggable="false" />
               <span>Setting</span>
             </ListItem>
           </Link>
           <ListItem visible={isOpen ? 1 : 0}>
-            <img src={img_signOut} alt="Sign out" />
+            <img src={img_signOut} alt="Sign out" draggable="false" />
             <span>Sign out</span>
           </ListItem>
         </DropdownList>
